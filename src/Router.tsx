@@ -13,7 +13,7 @@ function Router({toggleTheme,isDark}:IRouterProps) {
   <BrowserRouter>
    <Routes>
     <Route path="/:coinId/*" element={<Coin isDark={isDark}/>} />
-    <Route path="/" element={<Coins toggleTheme={toggleTheme} isDark={isDark}/>}></Route>
+    <Route  path={process.env.PUBLIC_URL + "/"}  element={<Coins toggleTheme={toggleTheme} isDark={isDark}/>}></Route>
    </Routes>
   </BrowserRouter>
  );
