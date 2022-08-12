@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Coins from "./routes/Coins";
 import Coin from "./routes/Coin";
 
@@ -10,12 +10,12 @@ interface IRouterProps {
 function Router({toggleTheme,isDark}:IRouterProps) {
 
  return (
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
+  <HashRouter basename={process.env.PUBLIC_URL}>
    <Routes>
     <Route path="/:coinId/*" element={<Coin isDark={isDark}/>} />
     <Route path="/" element={<Coins toggleTheme={toggleTheme} isDark={isDark}/>}></Route>
    </Routes>
-  </BrowserRouter>
+  </HashRouter>
  );
 }
 
